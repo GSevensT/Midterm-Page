@@ -177,11 +177,60 @@ label #cancel {
 /*main*/
 
 .main-home {
+    display: flex;
+    justify-content: center;   
+    align-items: center;       
+    flex-direction: column;   
+    min-height: 100vh;         
     text-align: center;
-    padding: 5em;
-    max-width: 85em;
-    margin: 10px auto;
-    padding: 100px;
-    border: 10px solid;
+    padding: 20px;            
+}
+.home-text {
+    display: inline-block;
+    letter-spacing: 10px;
+    font-family:  'Roboto', sans-serif;
+    border-right: 5px solid;
+    width: 30%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 2s, cursor .4s step-end infinite alternate;
+}
+@media (max-width: 1024px) {
+    .main-home {
+        padding: 50px;
+    }
+    .home-text {
+        font-size: 1.5rem;
+    }
 }
 
+@media (max-width: 768px) {
+    .main-home {
+        padding: 40px 10px;
+    }
+    .home-text {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-home {
+        padding: 30px;
+    }
+    .home-text {
+        font-size: 1rem;
+        width: 100%;
+        letter-spacing: 3px;
+    }
+}
+@keyframes cursor {
+    50% {
+        border-color: transparent;
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}
